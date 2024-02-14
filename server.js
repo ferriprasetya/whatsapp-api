@@ -4,13 +4,6 @@ const qrcode = require("qrcode");
 const socketIO = require("socket.io");
 const http = require("http");
 
-// file config
-const SESSION_FILE_PATH = "./wtf-session.json";
-let sessionCfg;
-if (fs.existsSync(SESSION_FILE_PATH)) {
-  sessionCfg = require(SESSION_FILE_PATH);
-}
-
 // initial instance
 const PORT = process.env.PORT || 8000;
 const app = express();
@@ -31,7 +24,6 @@ const client = new Client({
       "--disable-gpu",
     ],
   },
-  session: sessionCfg,
   authStrategy: new LocalAuth()
 });
 
