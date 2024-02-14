@@ -24,7 +24,6 @@ const client = new Client({
       "--disable-gpu",
     ],
   },
-  session: sessionCfg,
   authStrategy: new LocalAuth()
 });
 
